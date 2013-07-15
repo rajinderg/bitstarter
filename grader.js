@@ -85,7 +85,7 @@ if(require.main == module) {
     program
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-        .option('-u, --url <url>', 'htttp url')
+        .option('-u, --url <url>', 'http url to test') 
         .parse(process.argv);
 
     console.log("program.url = "+program.url); 
