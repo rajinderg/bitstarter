@@ -22,6 +22,7 @@ References:
 */
 
 var fs = require('fs');
+var util = require('util');
 var program = require('commander');
 var cheerio = require('cheerio');
 var rest = require('restler');
@@ -65,8 +66,8 @@ var clone = function(fn) {
 var handleUrl = function(result, response) {
 
     if ( result instanceof Error) {
-        //	console.error('Error: ' +util.format(response.message));
-	console.log("Error opeing the url");
+        console.error('Error: ' +util.format(result.message));
+	//console.log("Error opeing the url");
     } else {
 	var htmlfile ="htmlfile";
 	fs.writeFileSync( htmlfile, result);
